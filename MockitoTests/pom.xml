@@ -33,7 +33,7 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>report</goal>
+							<goal>prepare-agent</goal>
 						</goals>
 					</execution>
 					<execution>
