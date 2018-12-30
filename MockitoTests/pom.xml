@@ -26,6 +26,17 @@
 	</dependencies>
 	<build>
 		<plugins>
+			<!-- Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<!-- JaCoCo -->
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -45,28 +56,45 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Default = google spec -->
+ <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-checkstyle-plugin</artifactId>
+   <version>3.0.0</version>
+   <executions>
+     <execution>
+       <id>validate</id>
+       <phase>validate</phase>
+       <configuration>
+         <configLocation>checkstyle.xml</configLocation>
+         <encoding>UTF-8</encoding>
+         <consoleOutput>true</consoleOutput>
+         <failsOnError>true</failsOnError>
+         <linkXRef>false</linkXRef>
+       </configuration>
+       <goals>
+         <goal>check</goal>
+       </goals>
+     </execution>
+   </executions>
+ </plugin>
+		</plugins>
+	</build>
+	<!--
+	<reporting>
+		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>3.0.0</version>
-				<executions>
-					<execution>
-						<id>validate</id>
-						<phase>validate</phase>
-						<configuration>
-							<configLocation>checkstyle.xml</configLocation>
-							<encoding>UTF-8</encoding>
-							<consoleOutput>true</consoleOutput>
-							<failsOnError>true</failsOnError>
-							<linkXRef>false</linkXRef>
-						</configuration>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>checkstyle</report>
+						</reports>
+					</reportSet>
+				</reportSets>
 			</plugin>
 		</plugins>
-	</build>
+	</reporting>
+	-->
 </project>
