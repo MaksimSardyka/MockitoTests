@@ -64,7 +64,7 @@ public class EntityTest {
     }
 
     @Test
-    public void vefifyTestHadBeenCalled() {
+    public void vefifyMockingMethodHadBeenCalled() {
         // create mocking entity to replace real service
         Service service = Mockito.mock(Service.class);
         // Add mocking logic
