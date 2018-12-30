@@ -33,7 +33,7 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>prepare-agent</goal>
+							<goal>jacoco:report</goal>
 						</goals>
 					</execution>
 					<execution>
