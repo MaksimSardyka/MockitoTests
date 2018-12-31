@@ -10,6 +10,7 @@ public class Entity {
     }
 
     public int getNumber() {
+        String some = "sagd";
         return this.service.getNuberFromService();
     }
 }
