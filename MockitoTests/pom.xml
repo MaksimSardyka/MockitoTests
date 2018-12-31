@@ -11,6 +11,10 @@
 		<maven-pmd-plugin.version>3.11.0</maven-pmd-plugin.version>
 		<maven-jxr-plugin.version>3.0.0</maven-jxr-plugin.version>
 		<maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+
+		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
+		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+		<sonar.jacoco.reportPath>${user.dir}/target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -44,6 +48,28 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.7.1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+			<!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.2</version>
+				<configuration>
+					<destFile>${session.executionRootDirectory}/target/jacoco.exec</destFile>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<phase>initialize</phase>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
