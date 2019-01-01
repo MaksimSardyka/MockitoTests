@@ -61,7 +61,7 @@
 				<version>0.8.2</version>
 				<configuration>
 					<excludes>
-						<exclude>**/*Test.java</exclude>
+						<exclude>test/com/sardyko/mockito/entity/*Test.java</exclude>
 					</excludes>
 				</configuration>
 				<executions>
