@@ -61,7 +61,7 @@
 				<version>0.8.2</version>
 				<configuration>
 					<excludes>
-					<exclude>**/test/**/*.java</exclude>
+						<exclude>**/*Test.java</exclude>
 					</excludes>
 				</configuration>
 				<executions>
