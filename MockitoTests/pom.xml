@@ -61,10 +61,8 @@
 				<version>0.8.2</version>
 				<configuration>
 					<excludes>
-						<exclude>**/test</exclude>
+						<exclude>**/test/**/*.java</exclude>
 					</excludes>
-					<output>file</output>
-					<append>true</append>
 				</configuration>
 				<executions>
 					<execution>
